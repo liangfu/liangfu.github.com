@@ -1,31 +1,42 @@
+================================
+ Stereo Vision Project Homepage
+================================
+
 Welcome to the stereo vision project wiki!
 
 Introduction:
 -------------
 
+The *objective* of the project is to build 3d model from image pairs.
+
+The source code is available at http://github.com/liangfu/stereo-vision .
+
 General steps to implement 3d reconstruction from image sets :
 
+* find correspondence between first two selected image frames
+* build fundamental matrix from known correspondence
 * rectify images to get simple scanline stereo pair
 * compute disparity map (correspondence matching)
-* compute 3d surface geometry from disparity map
+* triangulate 3D surface from disparity map
+* texture mapping and update mesh from new image frames
 
 Feature Tracking :
-----------------------------------------
+------------------
 
 A list feature tracking algorithms :
 
-* KLT -- the Kanade-Lukas tracker
+* *KLT* -- the Kanade-Lukas tracker
 
 Self-Calibration:
 -----------------
 Build fundamental matrix *F* with feature correspondence between the views.
 
-Spare 3D Reconstruction:
-------------------------
+3D Reconstruction:
+------------------
 Calculate disparity map and build texture mapped model.
 
-Reference:
-----------
+Related Links:
+--------------
 1. Peter Kovesi's MATLAB functions for computer vision : 
    http://www.csse.uwa.edu.au/~pk/research/matlabfns/
 2. Probabilistic Feature-based On-line Rapid Model Acquisition :

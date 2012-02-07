@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
-<title></title>
+<meta name="generator" content="Docutils 0.8.1: http://docutils.sourceforge.net/" />
+<title>Stereo Vision Project Homepage</title>
 <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 6253 2010-03-02 00:24:53Z milde $
+:Id: $Id: html4css1.css 7056 2011-06-17 10:50:48Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
@@ -46,6 +46,10 @@ blockquote.epigraph {
 
 dl.docutils dd {
   margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
 
 /* Uncomment (and remove this text!) to get bold-faced definition list terms
 dl.docutils dt {
@@ -185,7 +189,7 @@ img.align-center, .figure.align-center, object.align-center {
 
 /* reset inner alignment in figures */
 div.align-right {
-  text-align: left }
+  text-align: inherit }
 
 /* div.align-center * { */
 /*   text-align: left } */
@@ -245,7 +249,7 @@ pre.address {
   margin-top: 0 ;
   font: inherit }
 
-pre.literal-block, pre.doctest-block {
+pre.literal-block, pre.doctest-block, pre.math {
   margin-left: 2em ;
   margin-right: 2em }
 
@@ -310,36 +314,41 @@ ul.auto-toc {
 </style>
 </head>
 <body>
-<div class="document">
-
+<div class="document" id="stereo-vision-project-homepage">
+<h1 class="title">Stereo Vision Project Homepage</h1>
 
 <p>Welcome to the stereo vision project wiki!</p>
 <div class="section" id="introduction">
 <h1>Introduction:</h1>
+<p>The <em>objective</em> of the project is to build 3d model from image pairs.</p>
+<p>The source code is available at <a class="reference external" href="http://github.com/liangfu/stereo-vision">http://github.com/liangfu/stereo-vision</a> .</p>
 <p>General steps to implement 3d reconstruction from image sets :</p>
 <ul class="simple">
+<li>find correspondence between first two selected image frames</li>
+<li>build fundamental matrix from known correspondence</li>
 <li>rectify images to get simple scanline stereo pair</li>
 <li>compute disparity map (correspondence matching)</li>
-<li>compute 3d surface geometry from disparity map</li>
+<li>triangulate 3D surface from disparity map</li>
+<li>texture mapping and update mesh from new image frames</li>
 </ul>
 </div>
 <div class="section" id="feature-tracking">
 <h1>Feature Tracking :</h1>
 <p>A list feature tracking algorithms :</p>
 <ul class="simple">
-<li>KLT -- the Kanade-Lukas tracker</li>
+<li><em>KLT</em> -- the Kanade-Lukas tracker</li>
 </ul>
 </div>
 <div class="section" id="self-calibration">
 <h1>Self-Calibration:</h1>
 <p>Build fundamental matrix <em>F</em> with feature correspondence between the views.</p>
 </div>
-<div class="section" id="spare-3d-reconstruction">
-<h1>Spare 3D Reconstruction:</h1>
+<div class="section" id="d-reconstruction">
+<h1>3D Reconstruction:</h1>
 <p>Calculate disparity map and build texture mapped model.</p>
 </div>
-<div class="section" id="reference">
-<h1>Reference:</h1>
+<div class="section" id="related-links">
+<h1>Related Links:</h1>
 <ol class="arabic simple">
 <li>Peter Kovesi's MATLAB functions for computer vision :
 <a class="reference external" href="http://www.csse.uwa.edu.au/~pk/research/matlabfns/">http://www.csse.uwa.edu.au/~pk/research/matlabfns/</a></li>
