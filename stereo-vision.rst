@@ -26,6 +26,7 @@ Feature Tracking :
 A list feature tracking algorithms :
 
 * *KLT* -- the Kanade-Lukas tracker
+* *Harris Corner Detector* - good for detecting corners with orthogonal edges
 
 Self-Calibration:
 -----------------
