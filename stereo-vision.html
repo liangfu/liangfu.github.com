@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.8.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.9: http://docutils.sourceforge.net/" />
 <title>Stereo Vision Project Homepage</title>
 <style type="text/css">
 
@@ -325,9 +325,11 @@ ul.auto-toc {
 <p>General steps to implement 3d reconstruction from image sets :</p>
 <ul class="simple">
 <li>find correspondence between first two selected image frames</li>
-<li>build fundamental matrix from known correspondence</li>
-<li>rectify images to get simple scanline stereo pair</li>
-<li>compute disparity map (correspondence matching)</li>
+<li>build fundamental matrix <em>F</em> from known correspondence</li>
+<li>rectify images to get simple scanline stereo pair,
+result in <em>H_1</em> and <em>H_2</em> for left and right image respectively</li>
+<li>compute disparity map
+using block matching algorithm -- via SAD (Sum of Absolute Diff), typically</li>
 <li>triangulate 3D surface from disparity map</li>
 <li>texture mapping and update mesh from new image frames</li>
 </ul>
