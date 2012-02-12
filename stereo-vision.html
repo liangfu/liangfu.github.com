@@ -317,13 +317,31 @@ ul.auto-toc {
 <div class="document" id="stereo-vision-project-homepage">
 <h1 class="title">Stereo Vision Project Homepage</h1>
 
-<p>Welcome to the stereo vision project wiki!</p>
+<blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Author:</th><td class="field-body">Liangfu Chen</td>
+</tr>
+<tr class="field"><th class="field-name">Version:</th><td class="field-body">0.0.1</td>
+</tr>
+<tr class="field"><th class="field-name">Date:</th><td class="field-body">Sun Feb 12 16:19:44 KST 2012</td>
+</tr>
+<tr class="field"><th class="field-name">Link:</th><td class="field-body"><a class="reference external" href="http://github.com/liangfu/stereo-vision">http://github.com/liangfu/stereo-vision</a></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <div class="section" id="introduction">
 <h1>Introduction:</h1>
-<p>The <em>objective</em> of the project is to build 3d model from image pairs.</p>
-<p>The source code is available at <a class="reference external" href="http://github.com/liangfu/stereo-vision">http://github.com/liangfu/stereo-vision</a> .</p>
+<p>The <strong>objective</strong> of the project is to build 3d model from image pairs. Instead
+of pursuing the accuracy of the final result, speed is considered more
+important in this project.</p>
+<p>The source code is available at
+<a class="reference external" href="http://github.com/liangfu/stereo-vision">github</a> .</p>
 <p>General steps to implement 3d reconstruction from image sets :</p>
-<ul class="simple">
+<ol class="arabic simple">
 <li>find correspondence between first two selected image frames</li>
 <li>build fundamental matrix <em>F</em> from known correspondence</li>
 <li>rectify images to get simple scanline stereo pair,
@@ -332,7 +350,7 @@ result in <em>H_1</em> and <em>H_2</em> for left and right image respectively</l
 using block matching algorithm -- via SAD (Sum of Absolute Diff), typically</li>
 <li>triangulate 3D surface from disparity map</li>
 <li>texture mapping and update mesh from new image frames</li>
-</ul>
+</ol>
 </div>
 <div class="section" id="feature-tracking">
 <h1>Feature Tracking :</h1>
@@ -341,10 +359,18 @@ using block matching algorithm -- via SAD (Sum of Absolute Diff), typically</li>
 <li><em>KLT</em> -- the Kanade-Lukas tracker</li>
 <li><em>Harris Corner Detector</em> - good for detecting corners with orthogonal edges</li>
 </ul>
+<p>OpenCV introduce the KLT algorithm in <em>cvCalcOpticalFlowPyrLK</em>. It takes in two
+gray images as input and outcome a list of matched feature points with
+evaluation values.
+By removing point matches with large error, the correspondence problem can be
+solved.</p>
 </div>
 <div class="section" id="self-calibration">
 <h1>Self-Calibration:</h1>
 <p>Build fundamental matrix <em>F</em> with feature correspondence between the views.</p>
+<p>With a number of matched feature points (more than 8), <em>cvFindFundamentalMat</em>
+function is applied. Then <em>cvStereoRectifyUncalibrated</em> is used to compute
+homography.</p>
 </div>
 <div class="section" id="d-reconstruction">
 <h1>3D Reconstruction:</h1>

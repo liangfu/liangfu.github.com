@@ -1,26 +1,36 @@
 ================================
  Stereo Vision Project Homepage
 ================================
-
-Welcome to the stereo vision project wiki!
+	:Author: Liangfu Chen
+	:Version: 0.0.1
+	:Date: Sun Feb 12 16:19:44 KST 2012
+	:Link: http://github.com/liangfu/stereo-vision
 
 Introduction:
 =============
 
-The *objective* of the project is to build 3d model from image pairs.
+The **objective** of the project is to build 3d model from image pairs. Instead
+of pursuing the accuracy of the final result, speed is considered more 
+important in this project.
 
-The source code is available at http://github.com/liangfu/stereo-vision .
+The source code is available at 
+`github <http://github.com/liangfu/stereo-vision>`_ .
 
 General steps to implement 3d reconstruction from image sets :
 
-* find correspondence between first two selected image frames
-* build fundamental matrix *F* from known correspondence
-* rectify images to get simple scanline stereo pair, 
-  result in *H_1* and *H_2* for left and right image respectively
-* compute disparity map
-  using block matching algorithm -- via SAD (Sum of Absolute Diff), typically
-* triangulate 3D surface from disparity map
-* texture mapping and update mesh from new image frames
+1. find correspondence between first two selected image frames
+   
+2. build fundamental matrix *F* from known correspondence
+   
+3. rectify images to get simple scanline stereo pair, 
+   result in *H_1* and *H_2* for left and right image respectively
+   
+4. compute disparity map
+   using block matching algorithm -- via SAD (Sum of Absolute Diff), typically
+   
+5. triangulate 3D surface from disparity map
+   
+6. texture mapping and update mesh from new image frames
 
 Feature Tracking :
 ==================
@@ -30,9 +40,20 @@ A list feature tracking algorithms :
 * *KLT* -- the Kanade-Lukas tracker
 * *Harris Corner Detector* - good for detecting corners with orthogonal edges
 
+OpenCV introduce the KLT algorithm in *cvCalcOpticalFlowPyrLK*. It takes in two
+gray images as input and outcome a list of matched feature points with
+evaluation values.
+By removing point matches with large error, the correspondence problem can be
+solved.
+
 Self-Calibration:
 =================
 Build fundamental matrix *F* with feature correspondence between the views.
+
+With a number of matched feature points (more than 8), *cvFindFundamentalMat* 
+function is applied. Then *cvStereoRectifyUncalibrated* is used to compute 
+homography.
+
 
 3D Reconstruction:
 ==================
