@@ -46,6 +46,21 @@ evaluation values.
 By removing point matches with large error, the correspondence problem can be
 solved.
 
+.. figure:: images/milkbox_test_l.jpg
+   :width: 300 px
+
+   left milk box image
+
+.. figure:: images/milkbox_test_r.jpg
+   :width: 300 px
+
+   right milk box image
+
+.. figure:: images/milkbox_finalmatches.png
+   :width: 300 px
+
+   final inlier matches
+
 Useful functions in OpenCV:
 ---------------------------
 
