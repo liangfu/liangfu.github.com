@@ -1,6 +1,6 @@
-================================
- Stereo Vision Project Homepage
-================================
+==============================
+Stereo Vision Project Homepage
+==============================
 	:Author: Liangfu Chen
 	:Version: 0.0.1
 	:Date: Sun Feb 12 16:19:44 KST 2012
@@ -47,6 +47,7 @@ By removing point matches with large error, the correspondence problem can be
 solved.
 
 Useful functions in OpenCV:
+---------------------------
 
 **cvCalcOpticalFlowPyrLK**
 	:input:		image_left, image_right
@@ -61,7 +62,21 @@ With a number of matched feature points (more than 8), *cvFindFundamentalMat*
 function is applied. Then *cvStereoRectifyUncalibrated* is used to compute 
 homography.
 
+The epipolar geometry is described by the following equation:
+
+.. math::
+
+   \begin{bmatrix} p_2 ; 1 \end{bmatrix}^T F
+   \begin{bmatrix} p_1 ; 1 \end{bmatrix} = 0
+
+The function finds the perspective transformation:
+
+.. math::
+   s_i \begin{bmatrix} x'_i \\ y'_i \\ 1 \\ \end{bmatrix}
+   \sim H \begin{bmatrix} x_i \\ y_i \\ 1 \\ \end{bmatrix}
+
 Useful functions in OpenCV:
+---------------------------
 
 **cvFindFundamentalMat**
 	:input:		imagePoints1, imagePoints2
@@ -83,13 +98,21 @@ Calculate disparity map and build texture mapped model.
 
 Related Links:
 ==============
-1. Peter Kovesi's MATLAB functions for computer vision : 
-   http://www.csse.uwa.edu.au/~pk/research/matlabfns/
-2. Probabilistic Feature-based On-line Rapid Model Acquisition :
-   http://mi.eng.cam.ac.uk/~qp202/my_papers/BMVC09/
-3. high-quality stereo sequences recorded from a moving vehicle :
-   http://cvlibs.net/datasets.html
-4. MATLAB Functions for Multiple View Geometry : 
-   http://www.robots.ox.ac.uk/~vgg/hzbook/code/
-5. Robust, Non-linear Homography Estimation
-   http://www.ics.forth.gr/~lourakis/homest/index.html
+1. `Peter Kovesi's MATLAB functions for computer vision 
+   <http://www.csse.uwa.edu.au/~pk/research/matlabfns/>`_
+   -- MATLAB code
+2. `Probabilistic Feature-based On-line Rapid Model Acquisition
+   <http://mi.eng.cam.ac.uk/~qp202/my_papers/BMVC09/>`_
+   -- Stereo Vision System Implemention
+3. `High-Quality Stereo Sequences Recorded From A Moving Vehicle
+   <http://cvlibs.net/datasets.html>`_
+   -- Useful Test Dataset
+4. `MATLAB Functions for Multiple View Geometry
+   <http://www.robots.ox.ac.uk/~vgg/hzbook/code/>`_
+   -- MATLAB code
+5. `Robust, Non-linear Homography Estimation 
+   <http://www.ics.forth.gr/~lourakis/homest/index.html>`_
+   -- Homography
+6. `Useful OpenCV Reference Manual 
+   <http://www.comp.leeds.ac.uk/vision/opencv/opencvref_cv.html>`_
+   -- OpenCV Reference

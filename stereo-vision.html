@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.9: http://docutils.sourceforge.net/" />
 <title>Stereo Vision Project Homepage</title>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <style type="text/css">
 
 /*
@@ -364,7 +365,8 @@ gray images as input and outcome a list of matched feature points with
 evaluation values.
 By removing point matches with large error, the correspondence problem can be
 solved.</p>
-<p>Useful functions in OpenCV:</p>
+<div class="section" id="useful-functions-in-opencv">
+<h2>Useful functions in OpenCV:</h2>
 <dl class="docutils">
 <dt><strong>cvCalcOpticalFlowPyrLK</strong></dt>
 <dd><table class="first last docutils field-list" frame="void" rules="none">
@@ -382,13 +384,29 @@ solved.</p>
 </dd>
 </dl>
 </div>
+</div>
 <div class="section" id="self-calibration">
 <h1>Self-Calibration:</h1>
 <p>Build fundamental matrix <em>F</em> with feature correspondence between the views.</p>
 <p>With a number of matched feature points (more than 8), <em>cvFindFundamentalMat</em>
 function is applied. Then <em>cvStereoRectifyUncalibrated</em> is used to compute
 homography.</p>
-<p>Useful functions in OpenCV:</p>
+<p>The epipolar geometry is described by the following equation:</p>
+<div class="math">
+\begin{equation*}
+\begin{bmatrix} p_2 ; 1 \end{bmatrix}^T F
+\begin{bmatrix} p_1 ; 1 \end{bmatrix} = 0
+\end{equation*}
+</div>
+<p>The function finds the perspective transformation:</p>
+<div class="math">
+\begin{equation*}
+s_i \begin{bmatrix} x'_i \\ y'_i \\ 1 \\ \end{bmatrix}
+\sim H \begin{bmatrix} x_i \\ y_i \\ 1 \\ \end{bmatrix}
+\end{equation*}
+</div>
+<div class="section" id="id1">
+<h2>Useful functions in OpenCV:</h2>
 <dl class="docutils">
 <dt><strong>cvFindFundamentalMat</strong></dt>
 <dd><table class="first last docutils field-list" frame="void" rules="none">
@@ -432,6 +450,7 @@ homography.</p>
 </dd>
 </dl>
 </div>
+</div>
 <div class="section" id="d-reconstruction">
 <h1>3D Reconstruction:</h1>
 <p>Calculate disparity map and build texture mapped model.</p>
@@ -439,16 +458,18 @@ homography.</p>
 <div class="section" id="related-links">
 <h1>Related Links:</h1>
 <ol class="arabic simple">
-<li>Peter Kovesi's MATLAB functions for computer vision :
-<a class="reference external" href="http://www.csse.uwa.edu.au/~pk/research/matlabfns/">http://www.csse.uwa.edu.au/~pk/research/matlabfns/</a></li>
-<li>Probabilistic Feature-based On-line Rapid Model Acquisition :
-<a class="reference external" href="http://mi.eng.cam.ac.uk/~qp202/my_papers/BMVC09/">http://mi.eng.cam.ac.uk/~qp202/my_papers/BMVC09/</a></li>
-<li>high-quality stereo sequences recorded from a moving vehicle :
-<a class="reference external" href="http://cvlibs.net/datasets.html">http://cvlibs.net/datasets.html</a></li>
-<li>MATLAB Functions for Multiple View Geometry :
-<a class="reference external" href="http://www.robots.ox.ac.uk/~vgg/hzbook/code/">http://www.robots.ox.ac.uk/~vgg/hzbook/code/</a></li>
-<li>Robust, Non-linear Homography Estimation
-<a class="reference external" href="http://www.ics.forth.gr/~lourakis/homest/index.html">http://www.ics.forth.gr/~lourakis/homest/index.html</a></li>
+<li><a class="reference external" href="http://www.csse.uwa.edu.au/~pk/research/matlabfns/">Peter Kovesi's MATLAB functions for computer vision</a>
+-- MATLAB code</li>
+<li><a class="reference external" href="http://mi.eng.cam.ac.uk/~qp202/my_papers/BMVC09/">Probabilistic Feature-based On-line Rapid Model Acquisition</a>
+-- Stereo Vision System Implemention</li>
+<li><a class="reference external" href="http://cvlibs.net/datasets.html">High-Quality Stereo Sequences Recorded From A Moving Vehicle</a>
+-- Useful Test Dataset</li>
+<li><a class="reference external" href="http://www.robots.ox.ac.uk/~vgg/hzbook/code/">MATLAB Functions for Multiple View Geometry</a>
+-- MATLAB code</li>
+<li><a class="reference external" href="http://www.ics.forth.gr/~lourakis/homest/index.html">Robust, Non-linear Homography Estimation</a>
+-- Homography</li>
+<li><a class="reference external" href="http://www.comp.leeds.ac.uk/vision/opencv/opencvref_cv.html">Useful OpenCV Reference Manual</a>
+-- OpenCV Reference</li>
 </ol>
 </div>
 </div>
