@@ -364,6 +364,23 @@ gray images as input and outcome a list of matched feature points with
 evaluation values.
 By removing point matches with large error, the correspondence problem can be
 solved.</p>
+<p>Useful functions in OpenCV:</p>
+<dl class="docutils">
+<dt><strong>cvCalcOpticalFlowPyrLK</strong></dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">input:</th><td class="field-body">image_left, image_right</td>
+</tr>
+<tr class="field"><th class="field-name">ouput:</th><td class="field-body">corners_left, corners_right, feature_errors</td>
+</tr>
+<tr class="field"><th class="field-name">optional:</th><td class="field-body">window_size, max_pyramids</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
 </div>
 <div class="section" id="self-calibration">
 <h1>Self-Calibration:</h1>
@@ -371,6 +388,49 @@ solved.</p>
 <p>With a number of matched feature points (more than 8), <em>cvFindFundamentalMat</em>
 function is applied. Then <em>cvStereoRectifyUncalibrated</em> is used to compute
 homography.</p>
+<p>Useful functions in OpenCV:</p>
+<dl class="docutils">
+<dt><strong>cvFindFundamentalMat</strong></dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">input:</th><td class="field-body">imagePoints1, imagePoints2</td>
+</tr>
+<tr class="field"><th class="field-name">output:</th><td class="field-body">fundamental matrix <em>F</em></td>
+</tr>
+<tr class="field"><th class="field-name">optional:</th><td class="field-body">RANSAC parameters</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>cvFindHomography</strong></dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">input:</th><td class="field-body">imagePoints1, imagePoints2</td>
+</tr>
+<tr class="field"><th class="field-name">output:</th><td class="field-body">homography <em>H</em>, mask (optional, to get inliers)</td>
+</tr>
+<tr class="field"><th class="field-name">optional:</th><td class="field-body"><em>RANSAC</em> or <em>LMED</em> parameters</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>cvStereoRectifyUncalibrated</strong></dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">input:</th><td class="field-body">imagePoints1, imagePoints2</td>
+</tr>
+<tr class="field"><th class="field-name">output:</th><td class="field-body">homography H1, H2 (for left and right images respectively)</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
 </div>
 <div class="section" id="d-reconstruction">
 <h1>3D Reconstruction:</h1>
@@ -387,6 +447,8 @@ homography.</p>
 <a class="reference external" href="http://cvlibs.net/datasets.html">http://cvlibs.net/datasets.html</a></li>
 <li>MATLAB Functions for Multiple View Geometry :
 <a class="reference external" href="http://www.robots.ox.ac.uk/~vgg/hzbook/code/">http://www.robots.ox.ac.uk/~vgg/hzbook/code/</a></li>
+<li>Robust, Non-linear Homography Estimation
+<a class="reference external" href="http://www.ics.forth.gr/~lourakis/homest/index.html">http://www.ics.forth.gr/~lourakis/homest/index.html</a></li>
 </ol>
 </div>
 </div>

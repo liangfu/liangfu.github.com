@@ -46,6 +46,13 @@ evaluation values.
 By removing point matches with large error, the correspondence problem can be
 solved.
 
+Useful functions in OpenCV:
+
+**cvCalcOpticalFlowPyrLK**
+	:input:		image_left, image_right
+	:ouput:		corners_left, corners_right, feature_errors
+	:optional:	window_size, max_pyramids
+
 Self-Calibration:
 =================
 Build fundamental matrix *F* with feature correspondence between the views.
@@ -54,6 +61,21 @@ With a number of matched feature points (more than 8), *cvFindFundamentalMat*
 function is applied. Then *cvStereoRectifyUncalibrated* is used to compute 
 homography.
 
+Useful functions in OpenCV:
+
+**cvFindFundamentalMat**
+	:input:		imagePoints1, imagePoints2
+	:output: 	fundamental matrix *F*
+	:optional:	RANSAC parameters	
+
+**cvFindHomography**
+	:input:		imagePoints1, imagePoints2
+	:output:	homography *H*, mask (optional, to get inliers)
+	:optional:	*RANSAC* or *LMED* parameters
+
+**cvStereoRectifyUncalibrated**
+	:input:		imagePoints1, imagePoints2
+	:output:	homography H1, H2 (for left and right images respectively)
 
 3D Reconstruction:
 ==================
@@ -69,3 +91,5 @@ Related Links:
    http://cvlibs.net/datasets.html
 4. MATLAB Functions for Multiple View Geometry : 
    http://www.robots.ox.ac.uk/~vgg/hzbook/code/
+5. Robust, Non-linear Homography Estimation
+   http://www.ics.forth.gr/~lourakis/homest/index.html
