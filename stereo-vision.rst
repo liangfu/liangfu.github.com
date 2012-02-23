@@ -9,9 +9,9 @@ Stereo Vision Project Homepage
 Introduction:
 =============
 
-The **objective** of the project is to build 3d model from image pairs. Instead
-of pursuing the accuracy of the final result, speed is considered more 
-important in this project.
+The **objective** of the project is to build 3d model from image pairs. 
+Instead of pursuing the accuracy of the final result, speed is considered 
+more important in this project.
 
 The source code is available at 
 `github <http://github.com/liangfu/stereo-vision>`_ .
@@ -40,26 +40,24 @@ A list feature tracking algorithms :
 * *KLT* -- the Kanade-Lukas tracker
 * *Harris Corner Detector* - good for detecting corners with orthogonal edges
 
-OpenCV introduce the KLT algorithm in *cvCalcOpticalFlowPyrLK*. It takes in two
-gray images as input and outcome a list of matched feature points with
+OpenCV introduce the KLT algorithm in *cvCalcOpticalFlowPyrLK*. It takes in 
+two gray images as input and outcome a list of matched feature points with
 evaluation values.
 By removing point matches with large error, the correspondence problem can be
 solved.
 
-.. figure:: images/milkbox_test_l.jpg
-   :width: 300 px
-
-   left milk box image
-
-.. figure:: images/milkbox_test_r.jpg
-   :width: 300 px
-
-   right milk box image
-
 .. figure:: images/milkbox_finalmatches.png
    :width: 300 px
+   :align: center
+                                           
+   final inlier matches                    
 
-   final inlier matches
+.. +------------------------------------------+---------------------------------------------+---------------------------------------------+
+   |.. figure:: images/milkbox_test_l.jpg     |.. figure:: images/milkbox_test_r.jpg        |.. figure:: images/milkbox_finalmatches.png  |
+   |   :width: 300 px                         |   :width: 300 px                            |   :width: 300 px                            |
+   |                                          |                                             |                                             |
+   |   left milk box image                    |   right milk box image                      |   final inlier matches                      |
+   +------------------------------------------+---------------------------------------------+---------------------------------------------+
 
 Useful functions in OpenCV:
 ---------------------------
@@ -131,3 +129,6 @@ Related Links:
 6. `Useful OpenCV Reference Manual 
    <http://www.comp.leeds.ac.uk/vision/opencv/opencvref_cv.html>`_
    -- OpenCV Reference
+7. `Visual 3D Modeling from Images
+   <http://www.cs.unc.edu/~marc/tutorial/>`_
+   -- Tutorial

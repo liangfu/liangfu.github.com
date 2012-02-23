@@ -336,9 +336,9 @@ ul.auto-toc {
 </blockquote>
 <div class="section" id="introduction">
 <h1>Introduction:</h1>
-<p>The <strong>objective</strong> of the project is to build 3d model from image pairs. Instead
-of pursuing the accuracy of the final result, speed is considered more
-important in this project.</p>
+<p>The <strong>objective</strong> of the project is to build 3d model from image pairs.
+Instead of pursuing the accuracy of the final result, speed is considered
+more important in this project.</p>
 <p>The source code is available at
 <a class="reference external" href="http://github.com/liangfu/stereo-vision">github</a> .</p>
 <p>General steps to implement 3d reconstruction from image sets :</p>
@@ -360,23 +360,21 @@ using block matching algorithm -- via SAD (Sum of Absolute Diff), typically</li>
 <li><em>KLT</em> -- the Kanade-Lukas tracker</li>
 <li><em>Harris Corner Detector</em> - good for detecting corners with orthogonal edges</li>
 </ul>
-<p>OpenCV introduce the KLT algorithm in <em>cvCalcOpticalFlowPyrLK</em>. It takes in two
-gray images as input and outcome a list of matched feature points with
+<p>OpenCV introduce the KLT algorithm in <em>cvCalcOpticalFlowPyrLK</em>. It takes in
+two gray images as input and outcome a list of matched feature points with
 evaluation values.
 By removing point matches with large error, the correspondence problem can be
 solved.</p>
-<div class="figure">
-<img alt="images/milkbox_test_l.jpg" src="images/milkbox_test_l.jpg" style="width: 300px;" />
-<p class="caption">left milk box image</p>
-</div>
-<div class="figure">
-<img alt="images/milkbox_test_r.jpg" src="images/milkbox_test_r.jpg" style="width: 300px;" />
-<p class="caption">right milk box image</p>
-</div>
-<div class="figure">
+<div class="figure align-center">
 <img alt="images/milkbox_finalmatches.png" src="images/milkbox_finalmatches.png" style="width: 300px;" />
 <p class="caption">final inlier matches</p>
 </div>
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -+
+|.. figure:: images/milkbox_test_l.jpg     |.. figure:: images/milkbox_test_r.jpg        |.. figure:: images/milkbox_finalmatches.png  |
+|   :width: 300 px                         |   :width: 300 px                            |   :width: 300 px                            |
+|                                          |                                             |                                             |
+|   left milk box image                    |   right milk box image                      |   final inlier matches                      |
++- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -+ -->
 <div class="section" id="useful-functions-in-opencv">
 <h2>Useful functions in OpenCV:</h2>
 <dl class="docutils">
