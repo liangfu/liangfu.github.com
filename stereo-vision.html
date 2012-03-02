@@ -5,7 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.9: http://docutils.sourceforge.net/" />
 <title>Stereo Vision Project Homepage</title>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <style type="text/css">
 
 /*
@@ -402,19 +401,9 @@ solved.</p>
 function is applied. Then <em>cvStereoRectifyUncalibrated</em> is used to compute
 homography.</p>
 <p>The epipolar geometry is described by the following equation:</p>
-<div class="math">
-\begin{equation*}
-\begin{bmatrix} p_2 ; 1 \end{bmatrix}^T F
-\begin{bmatrix} p_1 ; 1 \end{bmatrix} = 0
-\end{equation*}
-</div>
+<img alt="images/0aa28f59de7bbd54.png" class="align-center" src="images/0aa28f59de7bbd54.png" />
 <p>The function finds the perspective transformation:</p>
-<div class="math">
-\begin{equation*}
-s_i \begin{bmatrix} x'_i \\ y'_i \\ 1 \\ \end{bmatrix}
-\sim H \begin{bmatrix} x_i \\ y_i \\ 1 \\ \end{bmatrix}
-\end{equation*}
-</div>
+<img alt="images/643ace9b737ffa05.png" class="align-center" src="images/643ace9b737ffa05.png" />
 <div class="section" id="id1">
 <h2>Useful functions in OpenCV:</h2>
 <dl class="docutils">
@@ -480,6 +469,8 @@ s_i \begin{bmatrix} x'_i \\ y'_i \\ 1 \\ \end{bmatrix}
 -- Homography</li>
 <li><a class="reference external" href="http://www.comp.leeds.ac.uk/vision/opencv/opencvref_cv.html">Useful OpenCV Reference Manual</a>
 -- OpenCV Reference</li>
+<li><a class="reference external" href="http://www.cs.unc.edu/~marc/tutorial/">Visual 3D Modeling from Images</a>
+-- Tutorial</li>
 </ol>
 </div>
 </div>

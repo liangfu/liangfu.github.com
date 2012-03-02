@@ -77,16 +77,13 @@ homography.
 
 The epipolar geometry is described by the following equation:
 
-.. math::
-
-   \begin{bmatrix} p_2 ; 1 \end{bmatrix}^T F
-   \begin{bmatrix} p_1 ; 1 \end{bmatrix} = 0
+.. image:: images/0aa28f59de7bbd54.png
+   :align: center
 
 The function finds the perspective transformation:
 
-.. math::
-   s_i \begin{bmatrix} x'_i \\ y'_i \\ 1 \\ \end{bmatrix}
-   \sim H \begin{bmatrix} x_i \\ y_i \\ 1 \\ \end{bmatrix}
+.. image:: images/643ace9b737ffa05.png
+   :align: center
 
 Useful functions in OpenCV:
 ---------------------------
