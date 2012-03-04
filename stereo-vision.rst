@@ -129,3 +129,6 @@ Related Links:
 7. `Visual 3D Modeling from Images
    <http://www.cs.unc.edu/~marc/tutorial/>`_
    -- Tutorial
+8. `RGBDemo Project
+   <http://labs.manctl.com/rgbdemo/>`_
+   -- Demo built upon `Kinect <http://en.wikipedia.org/wiki/Kinect>`_
