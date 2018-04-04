@@ -2,7 +2,7 @@ title: liangfu
 description: Taking life-time to make machines think as we do.
 google_analytics: 
 show_downloads: true
-theme: jekyll-theme-time-machine
+theme: jekyll-theme-minimal
 
 gems:
   - jekyll-mentions
